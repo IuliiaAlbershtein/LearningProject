@@ -10,8 +10,34 @@ namespace LearningProject
     {
         static void Main(string[] args)
         {
-            Task1();
+            // Task1();
+            Task2();
         }
+
+        static void Task2()
+        {
+            int width = ReadInt();
+            int height = ReadInt();
+            int j = 0;
+
+            while(j < height)
+            {
+                j = j + 1;
+                int i = 0;
+                while (i < width)
+                {
+                    i = i + 1;
+                    Console.Write("*");
+                }
+                Console.Write("\n");
+            }
+
+           
+            
+            Console.ReadLine();
+
+        }
+
         static void Task1()
         {
             // Max of 3 integers
