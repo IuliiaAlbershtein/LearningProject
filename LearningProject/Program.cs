@@ -13,7 +13,20 @@ namespace LearningProject
             // Task1();
             // Task2();
             // Task3();
-            Task4();
+            // Task4();
+            Task5();
+        }
+        static void Task5()
+        {
+            int m = ReadInt();
+            int k = ReadInt();
+            int p = ReadInt();
+
+            int positivenum = PosNum(m, k, p);
+
+            Console.WriteLine(positivenum);
+
+            Console.ReadLine();
         }
         static void Task4()
         {
@@ -181,8 +194,23 @@ namespace LearningProject
                 }
             }
 
-
-
+        }
+        static int PosNum(int i1, int i2, int i3)
+        {
+            int count = 0;
+            if (i1 >= 0)
+            {
+                count = count + 1;
+            }
+            if (i2 >= 0)
+            {
+                count = count + 1;
+            }
+            if (i3 >= 0)
+            {
+                count = count + 1;
+            }
+            return count;
         }
     }
 }
