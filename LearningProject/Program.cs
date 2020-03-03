@@ -16,7 +16,17 @@ namespace LearningProject
             // Task4();
             // Task5();
             // Task6();
-            Task7();
+            // Task7();
+            Task8();
+        }
+        static void Task8()
+        {
+            int m = ReadInt();
+            int k = 1;
+            int p = 1;
+            int j = SumN(m, k, p);
+            Console.WriteLine(j);
+            Console.ReadLine();
         }
         static void Task7()
         {
@@ -225,7 +235,6 @@ namespace LearningProject
                     return sum3;
                 }
             }
-
         }
         static int PosNum(int i1, int i2, int i3)
         {
@@ -297,6 +306,15 @@ namespace LearningProject
                 }
             }
             return statement;
+        }
+        static int SumN(int i1, int i2, int i3)
+        {
+            while (i3 < i1)
+            {
+                i3 = i3 + 1;
+                i2 = i2 + i3;
+            }
+            return i2;
         }
     }
 }
