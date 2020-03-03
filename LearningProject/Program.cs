@@ -15,7 +15,25 @@ namespace LearningProject
             // Task3();
             // Task4();
             // Task5();
-            Task6();
+            // Task6();
+            Task7();
+        }
+        static void Task7()
+        {
+            int k = ReadInt();
+            int m = ReadInt();
+            int p = ReadInt();
+
+            bool statement = SumStatement(k, m, p);
+            if (statement == true)
+            {
+                Console.WriteLine("YES");
+            }
+            else
+            {
+                Console.WriteLine("NO");
+            }
+            Console.ReadLine();
         }
         static void Task6()
         {
@@ -28,7 +46,7 @@ namespace LearningProject
             Console.WriteLine(statement);
 
             Console.ReadLine();
-                                 
+
         }
         static void Task5()
         {
@@ -248,6 +266,33 @@ namespace LearningProject
                     else
                     {
                         statement = "NO";
+                    }
+                }
+            }
+            return statement;
+        }
+        static bool SumStatement(int i1, int i2, int i3)
+        {
+            bool statement = false;
+            if (i3 == i1 + i2)
+            {
+                statement = true;
+            }
+            else
+            {
+                if (i2 == i1 + i3)
+                {
+                    statement = true;
+                }
+                else
+                {
+                    if (i3 == i2 + i3)
+                    {
+                        statement = true;
+                    }
+                    else
+                    {
+                        statement = false;
                     }
                 }
             }
