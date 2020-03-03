@@ -14,7 +14,21 @@ namespace LearningProject
             // Task2();
             // Task3();
             // Task4();
-            Task5();
+            // Task5();
+            Task6();
+        }
+        static void Task6()
+        {
+            int m = ReadInt();
+            int k = ReadInt();
+            int p = ReadInt();
+
+            string statement = Statement(m, k, p);
+
+            Console.WriteLine(statement);
+
+            Console.ReadLine();
+                                 
         }
         static void Task5()
         {
@@ -211,6 +225,33 @@ namespace LearningProject
                 count = count + 1;
             }
             return count;
+        }
+        static string Statement(int i1, int i2, int i3)
+        {
+            string statement = "NO";
+            if (i1 == i2)
+            {
+                statement = "YES";
+            }
+            else
+            {
+                if (i1 == i3)
+                {
+                    statement = "YES";
+                }
+                else
+                {
+                    if (i2 == i3)
+                    {
+                        statement = "YES";
+                    }
+                    else
+                    {
+                        statement = "NO";
+                    }
+                }
+            }
+            return statement;
         }
     }
 }
