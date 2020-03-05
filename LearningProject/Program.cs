@@ -19,22 +19,53 @@ namespace LearningProject
             // Task7();
             // Task8();
             // Task9();
-            Task10();
+             Task10();
+            // Task11();
             
         }
-        static void Task10()
+        static void Task11()
+        {
+            int m = 0;
+            int k = 0;
+
+            while (m < 12)
+            {
+                m += 1;
+                int i = 0;
+                //while (i < m)
+                //{
+                //i += 1;
+                //Console.Write(" ");
+                //}
+                string str1 = " ";
+                string str2 = Figure(k, m, str1);
+                Console.Write (str2);
+                Console.Write("*\n");
+
+            }
+
+            Console.ReadLine();
+        }
+        static string Figure(int i1, int i2, string str1)
+        {
+            while (i1 < i2)
+            {
+                i1 += 1;
+                Console.Write(str1);
+            }
+            return str1;
+        }
+       static void Task10()
         {
             int m = 0;
                                  
             while (m < 5)
             {
                 m += 1;
-                int i = 0;
-                while (i < m)
-                {
-                    i += 1;
-                    Console.Write("0");
-                }
+                int k = 1;
+                string str1 = "0";
+                string str2 = Figure(k, m, str1);
+                Console.Write(str2);
                 Console.Write("\n");
 
             }
