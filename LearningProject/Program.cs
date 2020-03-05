@@ -17,8 +17,34 @@ namespace LearningProject
             // Task5();
             // Task6();
             // Task7();
-            Task8();
+            // Task8();
+            Task9();
+            
         }
+        static void Task9()
+        {
+            int m = 1;
+            int k = 0;
+            int p = m * k;
+            
+            while (m <= 10)
+            {
+                
+                while (k < 10)
+                {
+                    k = k + 1;
+                    p = m * k;
+                    Console.Write(p);
+                    Console.Write(" ");
+                }
+                m = m + 1;
+                k = 0;
+                Console.Write("\n");
+            }
+           
+            Console.ReadLine();
+        }
+       
         static void Task8()
         {
             int m = ReadInt();
@@ -90,58 +116,47 @@ namespace LearningProject
             {
                 Console.WriteLine("January");
             }
-            else
-            if (month == 2)
+            else if (month == 2)
             {
                 Console.WriteLine("February");
             }
-            else
-            if (month == 3)
+            else if (month == 3)
             {
                 Console.WriteLine("March");
             }
-            else
-            if (month == 4)
+            else if (month == 4)
             {
                 Console.WriteLine("April");
             }
-            else
-            if (month == 5)
+            else if (month == 5)
             {
                 Console.WriteLine("May");
             }
-            else
-            if (month == 6)
+            else if (month == 6)
             {
                 Console.WriteLine("June");
             }
-            else
-            if (month == 7)
+            else if (month == 7)
             {
                 Console.WriteLine("July");
             }
-            else
-            if (month == 8)
+            else if (month == 8)
             {
                 Console.WriteLine("August");
             }
-            else
-            if (month == 9)
+            else if (month == 9)
             {
                 Console.WriteLine("September");
             }
-            else
-            if (month == 10)
+            else if (month == 10)
             {
                 Console.WriteLine("October");
             }
-            else
-            if (month == 11)
+            else if (month == 11)
             {
                 Console.WriteLine("November");
             }
-            else
-            if (month == 12)
+            else if (month == 12)
             {
                 Console.WriteLine("December");
             }
@@ -156,17 +171,15 @@ namespace LearningProject
 
             while (j < height)
             {
-                j = j + 1;
+                j += 1;
                 int i = 0;
                 while (i < width)
                 {
-                    i = i + 1;
+                    i += 1;
                     Console.Write("*");
                 }
                 Console.Write("\n");
             }
-
-
 
             Console.ReadLine();
 
@@ -241,15 +254,15 @@ namespace LearningProject
             int count = 0;
             if (i1 >= 0)
             {
-                count = count + 1;
+                count += 1;
             }
             if (i2 >= 0)
             {
-                count = count + 1;
+                count += 1;
             }
             if (i3 >= 0)
             {
-                count = count + 1;
+                count += 1;
             }
             return count;
         }
@@ -311,7 +324,7 @@ namespace LearningProject
         {
             while (i3 < i1)
             {
-                i3 = i3 + 1;
+                i3 += 1;
                 i2 = i2 + i3;
             }
             return i2;
