@@ -18,8 +18,29 @@ namespace LearningProject
             // Task6();
             // Task7();
             // Task8();
-            Task9();
+            // Task9();
+            Task10();
             
+        }
+        static void Task10()
+        {
+            int m = 0;
+                                 
+            while (m < 5)
+            {
+                m += 1;
+                int i = 0;
+                while (i < m)
+                {
+                    i += 1;
+                    Console.Write("0");
+                }
+                Console.Write("\n");
+
+            }
+
+            Console.ReadLine();
+
         }
         static void Task9()
         {
@@ -32,12 +53,12 @@ namespace LearningProject
                 
                 while (k < 10)
                 {
-                    k = k + 1;
+                    k += 1;
                     p = m * k;
                     Console.Write(p);
                     Console.Write(" ");
                 }
-                m = m + 1;
+                m += 1;
                 k = 0;
                 Console.Write("\n");
             }
