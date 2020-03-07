@@ -19,11 +19,39 @@ namespace LearningProject
             // Task7();
             // Task8();
             // Task9();
-             Task10();
+            // Task10();
             // Task11();
-            
             // Task12();
             // Task13();
+            Task14();
+        }
+        static void Task14()
+        {
+            int p = 20;
+            int m = 1;
+            while (p >= 11)
+            {
+                RepeatString(p, " ");
+                RepeatString(m, "*");
+                Console.WriteLine();
+                p -= 1;
+                m += 2;
+            }
+            int t = 1;
+            int b = m - 2;
+            while (p >= 1)
+            {
+                
+                RepeatString(p, " ");
+                RepeatString(t, "*");
+                RepeatString(b, " ");
+                RepeatString(t, "*");
+                Console.WriteLine();
+                p -= 1;
+                t += 2;
+                b -= 2;
+            }
+            Console.ReadLine();
         }
         static void Task13()
         {
@@ -39,6 +67,7 @@ namespace LearningProject
             }
             Console.ReadLine();
         }
+
         static void Task12()
         {
             int p = 5;
@@ -82,6 +111,7 @@ namespace LearningProject
 
             Console.ReadLine();
         }
+
         static void Task11()
         {
             int m = 0;
@@ -91,11 +121,7 @@ namespace LearningProject
             {
                 m += 1;
                 int i = 0;
-                //while (i < m)
-                //{
-                //i += 1;
-                //Console.Write(" ");
-                //}
+
                 string str1 = " ";
                 string str2 = Figure(k, m, str1);
                 Console.Write (str2);
@@ -105,15 +131,7 @@ namespace LearningProject
 
             Console.ReadLine();
         }
-        static string Figure(int i1, int i2, string str1)
-        {
-            while (i1 < i2)
-            {
-                i1 += 1;
-                Console.Write(str1);
-            }
-            return str1;
-        }
+       
        static void Task10()
         {
             int m = 0;
@@ -458,5 +476,6 @@ namespace LearningProject
                 i += 1;
             }
         }
+        
     }
 }
