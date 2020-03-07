@@ -22,6 +22,50 @@ namespace LearningProject
              Task10();
             // Task11();
             
+            // Task12();
+        }
+        static void Task12()
+        {
+            int p = 5;
+            int k = 1;
+
+            Console.Write("*");
+            RepeatString(p, " ");
+            Console.Write("*");
+            RepeatString(p, " ");
+            Console.WriteLine("*");
+            p -= 2;
+
+            RepeatString(k, " ");
+            Console.Write("*");
+            RepeatString(p, " ");
+            Console.Write("*");
+            RepeatString(k, " ");
+            Console.Write("*");
+            RepeatString(p, " ");
+            Console.WriteLine("*");
+            p -= 2;
+            k += 1;
+
+            RepeatString(k, " ");
+            Console.Write("*");
+            RepeatString(p, " ");
+
+            k += 1;
+            Console.Write("*");
+            RepeatString(k, " ");
+            Console.Write("*");
+            RepeatString(p, " ");
+            Console.WriteLine("*");
+
+            RepeatString(k, " ");
+            Console.Write("*");
+
+            k += 2;
+            RepeatString(k, " ");
+            Console.WriteLine("*");
+
+            Console.ReadLine();
         }
         static void Task11()
         {
@@ -380,6 +424,15 @@ namespace LearningProject
                 i2 = i2 + i3;
             }
             return i2;
+        }
+        static string Figure(int i1, int i2, string str1)
+        {
+            while (i1 < i2)
+            {
+                i1 += 1;
+                Console.Write(str1);
+            }
+            return str1;
         }
     }
 }
