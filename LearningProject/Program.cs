@@ -23,6 +23,21 @@ namespace LearningProject
             // Task11();
             
             // Task12();
+            // Task13();
+        }
+        static void Task13()
+        {
+            int p = 20;
+            int m = 1;
+            while (p >= 0)
+            {
+                RepeatString(p, " ");
+                RepeatString(m, "*");
+                Console.WriteLine();
+                p -= 1;
+                m += 2;
+            }
+            Console.ReadLine();
         }
         static void Task12()
         {
@@ -433,6 +448,15 @@ namespace LearningProject
                 Console.Write(str1);
             }
             return str1;
+        }
+        static void RepeatString(int i1, string i2)
+        {
+            int i = 0;
+            while (i < i1)
+            {
+                Console.Write(i2);
+                i += 1;
+            }
         }
     }
 }
