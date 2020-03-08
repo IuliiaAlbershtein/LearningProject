@@ -26,11 +26,32 @@ namespace LearningProject
             // Task14();
             // Task15();
             // Task16();
-            Task17();
+            // Task17();
+            Task18();
 
             Console.ReadLine();
         }
 
+        static void Task18()
+        {
+            int[] numbers = ReadIntArray();
+            int min = 0;
+            for (int i = 0; i < numbers.Length; i +=1)
+            {
+                if(i == 0)
+                {
+                    min = numbers[i];
+                    continue;
+                }
+
+                if(numbers[i] < min)
+                {
+                    min = numbers[i];
+                }
+            }
+            Console.Write(min);
+
+        }
         static void Task17()
         {
             int[] numbers = ReadIntArray();
