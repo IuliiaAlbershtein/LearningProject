@@ -25,9 +25,22 @@ namespace LearningProject
             // Task13();
             // Task14();
             // Task15();
-            Task16();
+            // Task16();
+            Task17();
+
+            Console.ReadLine();
         }
 
+        static void Task17()
+        {
+            int[] numbers = ReadIntArray();
+            int sum = 0;
+            for (int i = 0; i < numbers.Length; i += 1)
+            {
+                sum += numbers[i];
+            }
+            Console.WriteLine(sum);
+        }
         static void Task16()
         {
             int[] numbers = CreateRandomIntArray();
