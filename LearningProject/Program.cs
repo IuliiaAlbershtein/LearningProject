@@ -23,7 +23,23 @@ namespace LearningProject
             // Task11();
             // Task12();
             // Task13();
-            Task14();
+            // Task14();
+            Task15();
+        }
+
+        static void Task15()
+        {
+            int[] numbers = ReadIntArray();
+            
+            for (int i = 0; i < numbers.Length; i += 1)
+            {
+                if(numbers[i] % 2 == 0)
+                {
+                    Console.Write(numbers[i]);
+                }
+                
+            }
+            Console.ReadLine();
         }
         static void Task14()
         {
@@ -475,6 +491,20 @@ namespace LearningProject
                 Console.Write(i2);
                 i += 1;
             }
+        }
+
+        static int[] ReadIntArray()
+        {
+            Console.Write("Enter array size: ");
+            int count = ReadInt();
+            Console.Write("\n");
+            int[] numbers = new int[count];
+            for(int i = 0; i < count; i += 1)
+            {
+                numbers[i] = ReadInt();
+            }
+
+            return numbers;
         }
         
     }
