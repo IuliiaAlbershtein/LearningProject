@@ -24,9 +24,20 @@ namespace LearningProject
             // Task12();
             // Task13();
             // Task14();
-            Task15();
+            // Task15();
+            Task16();
         }
 
+        static void Task16()
+        {
+            int[] numbers = CreateRandomIntArray();
+
+            for (int i = 0; i < numbers.Length; i += 1)
+            {
+                Console.WriteLine(numbers[i]);
+            }
+            Console.ReadLine();
+        }
         static void Task15()
         {
             int[] numbers = ReadIntArray();
@@ -497,7 +508,7 @@ namespace LearningProject
         {
             Console.Write("Enter array size: ");
             int count = ReadInt();
-            Console.Write("\n");
+            
             int[] numbers = new int[count];
             for(int i = 0; i < count; i += 1)
             {
@@ -506,6 +517,25 @@ namespace LearningProject
 
             return numbers;
         }
-        
+
+        static int[] CreateRandomIntArray()
+        {
+            Console.Write("Enter array size: ");
+            int count = ReadInt();
+
+            int[] numbers = new int[count];
+            for(int i = 0; i < count; i += 1)
+            {
+                numbers[i] = CreateRandomInt();
+            }
+
+            return numbers;
+        }
+
+        static Random random = new Random();
+        static int CreateRandomInt()
+        {
+            return random.Next(1000);
+        }
     }
 }
