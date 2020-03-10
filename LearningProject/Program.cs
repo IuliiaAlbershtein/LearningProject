@@ -32,6 +32,20 @@ namespace LearningProject
             Console.ReadLine();
         }
 
+        // Removing one int out from array
+        static void Task20()
+        {
+            int[] numbers = ReadIntArray();
+
+
+            int[] result = Remove(numbers, 1);
+
+
+            for (int i = 0; i < result.Length; i += 1)
+            {
+                Console.WriteLine(result[i]);
+            }
+        }
         // Increase second half of array by 1
         static void Task19()
         {
