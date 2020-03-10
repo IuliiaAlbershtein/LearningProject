@@ -32,6 +32,16 @@ namespace LearningProject
             Console.ReadLine();
         }
 
+        // Return Index of number[i] = x
+        static void Task23()
+        {
+            Console.Write("Number to search in array:");
+            int x = ReadInt();
+            int[] numbers = ReadIntArray();
+            int index = Contains(numbers, x);
+
+            Console.Write(index);
+        }
         // Contains number x 
         static void Task22()
         {
