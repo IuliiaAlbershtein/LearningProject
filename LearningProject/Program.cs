@@ -32,6 +32,20 @@ namespace LearningProject
             Console.ReadLine();
         }
 
+        // Reverse array
+        static void Task21()
+        {
+
+            int[] numbers = ReadIntArray();
+
+            int[] result = Reverse(numbers);
+
+
+            for (int i = 0; i < result.Length; i += 1)
+            {
+                Console.WriteLine(result[i]);
+            }
+        }
         // Removing one int out from array
         static void Task20()
         {
