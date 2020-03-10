@@ -32,6 +32,23 @@ namespace LearningProject
             Console.ReadLine();
         }
 
+        // Contains number x 
+        static void Task22()
+        {
+            Console.Write("Number to search in array:");
+            int x = ReadInt();
+            int[] numbers = ReadIntArray();
+            int index = Contains(numbers, x);
+            if (index > 0)
+            {
+                Console.Write("Contains x");
+            }
+            else
+            {
+                Console.Write("Does not contain x");
+            }
+
+        }
         // Reverse array
         static void Task21()
         {
