@@ -27,9 +27,42 @@ namespace LearningProject
             // Task15();
             // Task16();
             // Task17();
-            Task18();
-
+            // Task18();
+            // Task19();
+            // Task20();
+            // Task21();
+            // Task22();
+            // Task23();
+            Task24();
+            
             Console.ReadLine();
+        }
+
+        static void Task24()
+        {
+            int p = CreateRandomInt();
+            int tries = 0;
+            Console.WriteLine("Try to guess number.");
+
+            while (tries < 3)
+            {
+                int k = ReadInt();
+                if (p == k)
+                {
+                    Console.WriteLine("Right Number");
+                }
+                else if (p < k)
+                {
+                    Console.WriteLine("Made up number is less.");
+                }
+                else if (p > k)
+                {
+                    Console.WriteLine("Made up number is more.");
+                }
+                tries += 1;
+            }
+            Console.Write("No right answer. The answer is: ");
+            Console.Write(p);
         }
 
         // Return Index of number[i] = x
@@ -42,6 +75,7 @@ namespace LearningProject
 
             Console.Write(index);
         }
+
         // Contains number x 
         static void Task22()
         {
@@ -59,6 +93,7 @@ namespace LearningProject
             }
 
         }
+
         // Reverse array
         static void Task21()
         {
@@ -73,6 +108,7 @@ namespace LearningProject
                 Console.WriteLine(result[i]);
             }
         }
+
         // Removing one int out from array
         static void Task20()
         {
@@ -87,6 +123,8 @@ namespace LearningProject
                 Console.WriteLine(result[i]);
             }
         }
+
+        
         // Increase second half of array by 1
         static void Task19()
         {
@@ -97,6 +135,8 @@ namespace LearningProject
                 numbers[i] += 1;
             }
         }
+
+        // Min in array
         static void Task18()
         {
             int[] numbers = ReadIntArray();
@@ -117,6 +157,8 @@ namespace LearningProject
             Console.Write(min);
 
         }
+
+        // Sum of numbers in array
         static void Task17()
         {
             int[] numbers = ReadIntArray();
@@ -127,6 +169,8 @@ namespace LearningProject
             }
             Console.WriteLine(sum);
         }
+
+        // Creation of array with random numbers
         static void Task16()
         {
             int[] numbers = CreateRandomIntArray();
@@ -135,8 +179,9 @@ namespace LearningProject
             {
                 Console.WriteLine(numbers[i]);
             }
-            Console.ReadLine();
         }
+
+        // Even numbers from array
         static void Task15()
         {
             int[] numbers = ReadIntArray();
@@ -149,8 +194,9 @@ namespace LearningProject
                 }
                 
             }
-            Console.ReadLine();
         }
+
+        // Triforce made of *
         static void Task14()
         {
             int p = 20;
@@ -177,8 +223,9 @@ namespace LearningProject
                 t += 2;
                 b -= 2;
             }
-            Console.ReadLine();
         }
+
+        // Triangle made of *
         static void Task13()
         {
             int p = 20;
@@ -191,9 +238,9 @@ namespace LearningProject
                 p -= 1;
                 m += 2;
             }
-            Console.ReadLine();
         }
 
+        // W made of *
         static void Task12()
         {
             int p = 5;
@@ -235,9 +282,9 @@ namespace LearningProject
             RepeatString(k, " ");
             Console.WriteLine("*");
 
-            Console.ReadLine();
         }
 
+        // \ made of *
         static void Task11()
         {
             int m = 0;
@@ -255,9 +302,9 @@ namespace LearningProject
 
             }
 
-            Console.ReadLine();
         }
        
+        // Number of signs in line is equal to number of line
        static void Task10()
         {
             int m = 0;
@@ -272,10 +319,9 @@ namespace LearningProject
                 Console.Write("\n");
 
             }
-
-            Console.ReadLine();
-
         }
+
+        // Multiplication table
         static void Task9()
         {
             int m = 1;
@@ -297,9 +343,9 @@ namespace LearningProject
                 Console.Write("\n");
             }
            
-            Console.ReadLine();
         }
        
+        // Sum of all integers inside entered number
         static void Task8()
         {
             int m = ReadInt();
@@ -307,8 +353,9 @@ namespace LearningProject
             int p = 1;
             int j = SumN(m, k, p);
             Console.WriteLine(j);
-            Console.ReadLine();
         }
+
+        // if sum 2 out of 3 nimbers is equal to 3d number
         static void Task7()
         {
             int k = ReadInt();
@@ -324,8 +371,9 @@ namespace LearningProject
             {
                 Console.WriteLine("NO");
             }
-            Console.ReadLine();
         }
+
+        // Same numbers
         static void Task6()
         {
             int m = ReadInt();
@@ -336,9 +384,9 @@ namespace LearningProject
 
             Console.WriteLine(statement);
 
-            Console.ReadLine();
-
         }
+
+        // Positve numbers
         static void Task5()
         {
             int m = ReadInt();
@@ -348,9 +396,9 @@ namespace LearningProject
             int positivenum = PosNum(m, k, p);
 
             Console.WriteLine(positivenum);
-
-            Console.ReadLine();
         }
+
+        // Max sum 2 out of 3 numbers
         static void Task4()
         {
             int m = ReadInt();
@@ -359,8 +407,9 @@ namespace LearningProject
 
             int summax = SumMax(m, k, p);
             Console.WriteLine(summax);
-            Console.ReadLine();
         }
+
+        // Month name according to month number
         static void Task3()
         {
             Console.WriteLine("What is the month now?");
@@ -415,9 +464,9 @@ namespace LearningProject
             {
                 Console.WriteLine("December");
             }
-            Console.ReadLine();
         }
 
+        // Draw rectangle
         static void Task2()
         {
             int width = ReadInt();
@@ -436,22 +485,18 @@ namespace LearningProject
                 Console.Write("\n");
             }
 
-            Console.ReadLine();
-
         }
 
+        // Max of 3 integers
         static void Task1()
         {
-            // Max of 3 integers
+           
             int m = ReadInt();
             int k = ReadInt();
             int p = ReadInt();
 
             int max = Max(m, k, p);
             Console.WriteLine(max);
-
-
-            Console.ReadLine();
         }
 
         static int ReadInt()
@@ -634,7 +679,61 @@ namespace LearningProject
         static Random random = new Random();
         static int CreateRandomInt()
         {
-            return random.Next(1000);
+            return random.Next(100);
+        }
+        static int[] Remove(int[] array, int indexToRemove)
+        {
+            int[] result = new int[array.Length - 1];
+            for (int i = 0; i < array.Length; i += 1)
+            {
+                if (i < indexToRemove)
+                {
+                    // copy
+                    result[i] = array[i];
+                }
+                else if (i > indexToRemove)
+                {
+                    // copy -1
+                    result[i - 1] = array[i];
+
+                }
+                else
+                {
+                    // do nothing
+                }
+            }
+            return result;
+        }
+
+        static int[] Reverse(int[] array)
+        {
+            for (int i = 0; i < array.Length / 2; i += 1)
+            {
+                int temp = array[i];
+                array[i] = array[array.Length - i - 1];
+                array[array.Length - i - 1] = temp;
+
+                /*
+                int x = 5;
+                int y = 6;
+
+                int z = x;
+                x = y;
+                y = z;
+                */
+            }
+            return array;
+        }
+        static int Contains(int[] array, int compareInt)
+        {
+            for (int i = 0; i < array.Length; i += 1)
+            {
+                if (array[i] == compareInt)
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
     }
 }
