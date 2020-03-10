@@ -32,6 +32,16 @@ namespace LearningProject
             Console.ReadLine();
         }
 
+        // Increase second half of array by 1
+        static void Task19()
+        {
+            int[] numbers = ReadIntArray();
+
+            for(int i = numbers.Length / 2; i < numbers.Length ; i += 1 )
+            {
+                numbers[i] += 1;
+            }
+        }
         static void Task18()
         {
             int[] numbers = ReadIntArray();
