@@ -38,6 +38,21 @@ namespace LearningProject
             Console.ReadLine();
         }
 
+        // The least even number in array
+        static void Task27()
+        {
+            int[] numbers = ReadIntArray();
+            // min is equal to maximum possible value in 32bit
+            int min = int.MaxValue;
+            for (int i = 0; i < numbers.Length; i += 1)
+            {
+                if (numbers[i] < min && numbers[i] % 2 == 0)
+                {
+                    min = numbers[i];
+                }
+            }
+            Console.Write(min);
+        }
         // Sum of odd numbers in array, which are less than 11
         static void Task26()
         {
