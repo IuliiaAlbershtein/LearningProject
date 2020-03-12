@@ -38,6 +38,20 @@ namespace LearningProject
             Console.ReadLine();
         }
 
+        // Even numbers in array
+        static void Task25()
+        {
+            int[] numbers = ReadIntArray();
+            int evencount = 0;
+            for (int i = 0; i < numbers.Length; i += 1)
+            {
+                if (numbers[i] % 2 == 0)
+                {
+                    evencount += 1;
+                }
+            }
+            Console.Write(evencount);
+        }
         static void Task24()
         {
             int p = CreateRandomInt();
