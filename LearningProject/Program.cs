@@ -33,9 +33,34 @@ namespace LearningProject
             // Task21();
             // Task22();
             // Task23();
-            Task24();
+            // Task24();
+            // Task25();
+            // Task26();
+            // Task27();
+            Task28();
             
             Console.ReadLine();
+        }
+
+
+        // Min sum of two nearstanding numbers in array
+        static void Task28()
+        {
+            int[] numbers = ReadIntArray();
+
+            int min = numbers[0] + numbers[1];
+            int index = 0;
+            for (int i = 1; i < numbers.Length - 1; i += 1)
+            {
+                if (numbers[i] + numbers[i + 1] < min)
+                {
+                    min = numbers[i] + numbers[i + 1];
+                    index = i;
+                }
+            }
+            Console.Write(index);
+            Console.WriteLine(index + 1);
+
         }
 
         // The least even number in array
@@ -53,6 +78,7 @@ namespace LearningProject
             }
             Console.Write(min);
         }
+
         // Sum of odd numbers in array, which are less than 11
         static void Task26()
         {
@@ -68,6 +94,7 @@ namespace LearningProject
             Console.Write(oddsum);
 
         }
+
         // Even numbers in array
         static void Task25()
         {
@@ -82,18 +109,20 @@ namespace LearningProject
             }
             Console.Write(evencount);
         }
+
         static void Task24()
         {
             int p = CreateRandomInt();
             int tries = 0;
             Console.WriteLine("Try to guess number.");
-
+ 
             while (tries < 3)
             {
                 int k = ReadInt();
                 if (p == k)
                 {
                     Console.WriteLine("Right Number");
+                    return;
                 }
                 else if (p < k)
                 {
@@ -105,7 +134,6 @@ namespace LearningProject
                 }
                 tries += 1;
             }
-            Console.Write("No right answer. The answer is: ");
             Console.Write(p);
         }
 
