@@ -38,6 +38,21 @@ namespace LearningProject
             Console.ReadLine();
         }
 
+        // Sum of odd numbers in array, which are less than 11
+        static void Task26()
+        {
+            int[] numbers = ReadIntArray();
+            int oddsum = 0;
+            for (int i = 0; i < numbers.Length; i += 1)
+            {
+                if (numbers[i] % 2 != 0 && numbers[i] <= 11)
+                {
+                    oddsum = numbers[i] + oddsum;
+                }
+            }
+            Console.Write(oddsum);
+
+        }
         // Even numbers in array
         static void Task25()
         {
