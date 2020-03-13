@@ -38,9 +38,31 @@ namespace LearningProject
             // Task26();
             // Task27();
             // Task28();
-            Task29();
+            // Task29();
+            Task30();
                         
             Console.ReadLine();
+        }
+
+        // 
+        static void Task30()
+        {
+            int[] numbers = ReadIntArray();
+            // int[] compare = numbers;
+            bool p = false;
+
+            for (int i = 0; i < numbers.Length; i += 1)
+            {
+               int m = numbers[i];
+                for (int j = 0; j < numbers.Length; j += 1)
+                {
+                    if (m == numbers[j] && i != j)
+                    {
+                        p = true;
+                    }
+                }
+            }
+            Console.Write(p);
         }
 
         //Increase/decrease type of array
@@ -119,7 +141,7 @@ namespace LearningProject
             int oddsum = 0;
             for (int i = 0; i < numbers.Length; i += 1)
             {
-                if (numbers[i] % 2 != 0 && numbers[i] <= 11)
+                if (numbers[i] % 2 != 0 && numbers[i] < 11)
                 {
                     oddsum = numbers[i] + oddsum;
                 }
