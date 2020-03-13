@@ -37,11 +37,44 @@ namespace LearningProject
             // Task25();
             // Task26();
             // Task27();
-            Task28();
-            
+            // Task28();
+            Task29();
+                        
             Console.ReadLine();
         }
 
+        //Increase/decrease type of array
+        static void Task29()
+        {
+            int[] numbers = ReadIntArray();
+
+            bool p = false;
+            bool k = false;
+            for (int i = 0; i < numbers.Length - 1; i += 1)
+            {
+                if (numbers[i] < numbers[i + 1])
+                {
+                    p = true;
+                }
+                
+                else if (numbers[i] > numbers[i + 1])
+                {
+                    k = true;
+                }
+            }
+            if (p == true && k != true)
+            {
+                Console.Write("Vozr");
+            }
+            else if (k == true && p != true)
+            {
+                Console.Write("Ubyv");
+            }
+            else if (k == true && p == true)
+            {
+                Console.Write("Mix");
+            }
+        }
 
         // Min sum of two nearstanding numbers in array
         static void Task28()
