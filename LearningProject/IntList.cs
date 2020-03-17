@@ -126,6 +126,23 @@ namespace LearningProject
             }
             array = newArray;
         }
+        public int Firts()
+        {
+            if (count != 0)
+            {
+                return array[0];
+            }
+            return -1;
+        }
+
+        public int Last()
+        {
+            if (count != 0)
+            {
+                return array[count - 1];
+            }
+            return -1;
+        }
 
         public int GetCount()
         {
