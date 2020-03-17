@@ -95,15 +95,15 @@ namespace LearningProject
         }
         public void RemoveAll()
         {
-            int[] newArray = new int[5];
-            array = newArray;
-            /*for (int i = 0; i < array.Length; i += 1)
+            // int[] newArray = new int[5];
+            // array = newArray;
+            for (int i = 0; i < array.Length; i += 1)
             {
                 if (array[i] != 0)
                 {
                     array[i] = 0;
                 }
-            }*/
+            }
             ResizeIfNeeded();
         }
         public int IndexOf(int value)
@@ -117,9 +117,6 @@ namespace LearningProject
             }
             return -1;
         }
-
-
-
         public void Reverse()
         {
             int[] newArray = new int[array.Length];
@@ -178,7 +175,6 @@ namespace LearningProject
             }
             return max;
         }
-
         public int Min()
         {
             int min = 0;
