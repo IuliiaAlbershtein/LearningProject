@@ -106,6 +106,28 @@ namespace LearningProject
             }
             ResizeIfNeeded();
         }
+
+        public void Sort()
+        {
+            int index = 0;
+            for (int j = 0; j < count; j += 1)
+            {
+                int k = 0;
+                int min = int.MaxValue;
+                for (int i = index; i < count; i += 1)
+                {
+                    if (array[i] < min)
+                    {
+                        min = array[i];
+                        k = i;
+                    }
+                }
+                int temp = array[index];
+                array[k] = temp;
+                array[index] = min;
+                index += 1;
+            }
+        }
         public int IndexOf(int value)
         {
             for (int i = 0; i < array.Length; i += 1)
