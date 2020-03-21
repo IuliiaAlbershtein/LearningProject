@@ -109,12 +109,12 @@ namespace LearningProject
 
         public void Sort()
         {
-            int index = 0;
-            for (int j = 0; j < count; j += 1)
+            var index = 0;
+            for (var j = 0; j < count; j += 1)
             {
-                int k = 0;
-                int min = int.MaxValue;
-                for (int i = index; i < count; i += 1)
+                var k = 0;
+                var min = int.MaxValue;
+                for (var i = index; i < count; i += 1)
                 {
                     if (array[i] < min)
                     {
@@ -122,8 +122,11 @@ namespace LearningProject
                         k = i;
                     }
                 }
-                int temp = array[index];
+
+                var temp = array[index];
                 array[k] = temp;
+                array[k] = array[index];
+
                 array[index] = min;
                 index += 1;
             }
@@ -134,7 +137,7 @@ namespace LearningProject
             {
                 if (array[i] == value)
                 {
-                return i;
+                    return i;
                 }
             }
             return -1;

@@ -39,16 +39,97 @@ namespace LearningProject
             // Task27();
             // Task28();
             // Task29();
-            Task30();
-                        
+            // Task30();
+            // Task31();
+            // Task39();
+            Task40();
+
             Console.ReadLine();
         }
 
-        // 
+        // Implement IntList
+        static void Task40()
+        {
+            IntList list = new IntList();
+
+            list.Add(4);
+            list.Add(55);
+            list.Add(6);
+            list.Add(2);
+            list.Add(1);
+            list.Add(1);
+            list.Add(1);
+            // list.Remove(5);
+            // list.Contains(6);
+            // list.Max();
+            // list.Min();
+            // list.Sum();
+            // list.IndexOf(22);
+            // list.Reverse();
+            // list.Insert(4, 35);
+            // list.RemoveAll();
+            list.Sort();
+
+            for (int i = 0; i < list.GetCount(); i += 1)
+            {
+                Console.WriteLine(list.GetValue(i));
+            }
+            // Console.Write(list.GetCount());
+            
+            //Console.WriteLine(list.Contains(6));
+            //Console.WriteLine(list.Max());
+            //Console.WriteLine(list.Min());
+            //Console.WriteLine(list.Sum());
+            //Console.WriteLine(list.IndexOf(22));
+            
+            
+        }
+
+        static void Task39()
+        {
+
+            Dog[] dogs = new Dog[3];
+            dogs[0] = new BigDog("Barbos", 4, 30);
+            dogs[1] = new Dog("Bara", 5);
+            dogs[2] = new Dog("Sara", 3);
+
+            dogs[1].MakeFriend(dogs[0]);
+
+            for (int i = 0; i < dogs.Length; i += 1)
+            {
+                dogs[i].ShowInfo();
+            }
+        }
+
+
+        static void Task31()
+        {
+            int[] numbers = ReadIntArray();
+            int count = 0;
+
+            for (int i = 0; i < numbers.Length; i += 1)
+            {
+                int m = numbers[i];
+                for (int j = i; j < numbers.Length; j += 1)
+                {
+                  //  bool e = false;
+                    if (m != numbers[j] && i != j)
+                    {
+                      //  e = true;
+                        count += 1;
+                    }
+              
+                }
+            }
+             
+
+            Console.Write(count);
+        }
+
+        // Find identical numbers
         static void Task30()
         {
             int[] numbers = ReadIntArray();
-            // int[] compare = numbers;
             bool p = false;
 
             for (int i = 0; i < numbers.Length; i += 1)
