@@ -55,11 +55,11 @@ namespace LearningProject
             list.Add(4);
             list.Add(55);
             list.Add(6);
-            list.Add(2);
-            list.Add(1);
-            list.Add(1);
-            list.Add(1);
-            // list.Remove(5);
+            list.Add(6);
+            list.Add(6);
+            list.Add(6);
+            list.Add(6);
+            // list.Remove(6);
             // list.Contains(6);
             // list.Max();
             // list.Min();
@@ -68,21 +68,36 @@ namespace LearningProject
             // list.Reverse();
             // list.Insert(4, 35);
             // list.RemoveAll();
-            list.Sort();
+            //            list.Sort();
 
-            for (int i = 0; i < list.GetCount(); i += 1)
-            {
-                Console.WriteLine(list.GetValue(i));
-            }
-            // Console.Write(list.GetCount());
+            //var index1 = list.IndexOf(value => value > 3);
+            //var indexEven = list.IndexOf(x => x % 2 == 0);
+
+            //var even = list.Filter(x => x % 2 == 0);
             
+            bool condition(int x)
+            {
+                return x % 2 == 0;
+            }
+            var even = list.Filter(condition);
+            var doubled = list.Transform(x => x * 2);
+
+            for (var i = 0; i < doubled.Count; i += 1)
+             {
+             Console.WriteLine(doubled.GetValue(i));
+             }
+
+            //for (var i = 0; i < list.GetCount(); i += 1)
+            //{
+            //  Console.WriteLine(list.GetValue(i));
+            //}
+            // Console.Write(list.GetCount());
+
             //Console.WriteLine(list.Contains(6));
             //Console.WriteLine(list.Max());
             //Console.WriteLine(list.Min());
             //Console.WriteLine(list.Sum());
             //Console.WriteLine(list.IndexOf(22));
-            
-            
         }
 
         static void Task39()
