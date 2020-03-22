@@ -42,9 +42,29 @@ namespace LearningProject
             // Task30();
             // Task31();
             // Task39();
-            Task40();
+            // Task40();
+            Task41();
 
             Console.ReadLine();
+        }
+
+        static void Task41()
+        {
+            // LinkedList
+            var linkedList = new LinkedList();
+            linkedList.AddFirst(10);
+            linkedList.AddFirst(11);
+            linkedList.AddFirst(4);
+            linkedList.AddFirst(7);
+            var value = linkedList.GetValue(1);
+            var count = linkedList.Count;
+
+            linkedList.ForEach(x => Console.WriteLine(x));
+
+            for (var i = 0; i < linkedList.Count; i += 1)
+            {
+                Console.WriteLine(linkedList.GetValue(i));
+            }
         }
 
         // Implement IntList
