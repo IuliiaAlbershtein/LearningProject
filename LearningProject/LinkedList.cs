@@ -147,7 +147,17 @@ class Node
         //добавить новое последнее значение
         public void AddLast()
         {
-
+            var current = head;
+            var newNode = new Node();
+            while (current != null)
+            {
+                current = current.Next;
+            }
+            if (current.Next == null)
+            {
+                current.Next = newNode;
+                newNode.Next = null;
+            }
         }
     }
 }
