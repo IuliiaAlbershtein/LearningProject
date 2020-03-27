@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace LearningProject
 {
-//создание класса
+    //создание класса
     class IntList
     {
         private int[] array;
         private int count;
-//создание конструктора
+        //создание конструктора
         public IntList()
         {
             array = new int[5];
             count = 0;
         }
-//количество значений в массиве
+        //количество значений в массиве
         public int Count
         {
             get { return count; }
         }
-//размер массива
+        //размер массива
         public int Capacity
         {
             get { return array.Length; }
@@ -34,7 +34,7 @@ namespace LearningProject
             if (Count >= Capacity)
             {
                 int[] newArray = new int[array.Length * 2];
-                for(var i = 0; i < array.Length; i += 1)
+                for (var i = 0; i < array.Length; i += 1)
                 {
                     newArray[i] = array[i];
                 }
@@ -50,14 +50,14 @@ namespace LearningProject
                 array = newArray;
             }
         }
-//добавление нового значения в конец
+        //добавление нового значения в конец
         public void Add(int value)
         {
             ResizeIfNeeded();
             array[Count] = value;
             count += 1;
         }
-//добавление нового значение в указанный индекс
+        //добавление нового значение в указанный индекс
         public void Insert(int index, int value)
         {
             ResizeIfNeeded();
@@ -78,7 +78,7 @@ namespace LearningProject
             }
             count += 1;
         }
-//поиск минимального значения
+        //поиск минимального значения
         public int Min()
         {
             var min = 0;
@@ -98,7 +98,7 @@ namespace LearningProject
             }
             return min;
         }
-//поиск максимального значения
+        //поиск максимального значения
         public int Max()
         {
             var max = 0;
@@ -118,7 +118,7 @@ namespace LearningProject
             }
             return max;
         }
-//поиск суммы всех значений
+        //поиск суммы всех значений
         public int Sum()
         {
             var sum = 0;
@@ -128,20 +128,20 @@ namespace LearningProject
             }
             return sum;
         }
-//получить значение под конкретным индексом
+        //получить значение под конкретным индексом
         public int GetValue(int index)
         {
             return array[index];
         }
-//изменить значение под конкретным индексом
+        //изменить значение под конкретным индексом
         public void SetValue(int index, int value)
         {
             array[index] = value;
         }
-//определить если массив содержит значение
+        //определить если массив содержит значение
         public bool Contains(int value)
         {
-            for(var i = 0; i < array.Length; i += 1)
+            for (var i = 0; i < array.Length; i += 1)
             {
                 if (array[i] == value)
                 {
@@ -150,7 +150,7 @@ namespace LearningProject
             }
             return false;
         }
-//поиск первого значения
+        //поиск первого значения
         public int First()
         {
             if (count != 0)
@@ -159,7 +159,7 @@ namespace LearningProject
             }
             return -1;
         }
-//поиск последнего значения
+        //поиск последнего значения
         public int Last()
         {
             if (count != 0)
@@ -168,7 +168,7 @@ namespace LearningProject
             }
             return -1;
         }
-//удаление значения из массива
+        //удаление значения из массива
         public void Remove(int value)
         {
             int countValue = 0;
@@ -177,7 +177,7 @@ namespace LearningProject
                 if (array[i] == value)
                 {
                     countValue += 1;
-                }           
+                }
             }
             for (int i = 0; i < array.Length; i += 1)
             {
@@ -197,7 +197,7 @@ namespace LearningProject
             count = count - countValue;
             ResizeIfNeeded();
         }
-//удаление значения в индексе
+        //удаление значения в индексе
         public void RemoveAt(int index)
         {
             for (var i = 0; i < array.Length - 1; i += 1)
@@ -214,7 +214,7 @@ namespace LearningProject
             count += 1;
             ResizeIfNeeded();
         }
-//удаление всех значений
+        //удаление всех значений
         public void RemoveAll()
         {
             for (var i = 0; i < array.Length; i += 1)
@@ -226,7 +226,7 @@ namespace LearningProject
             }
             ResizeIfNeeded();
         }
- //Сортировка массива
+        //Сортировка массива
         public void Sort()
         {
             var index = 0;
@@ -247,7 +247,7 @@ namespace LearningProject
                 index += 1;
             }
         }
-//фильтровка массива
+        //фильтровка массива
         public IntList Filter(Func<int, bool> condition)
         {
             var result = new IntList();
@@ -260,7 +260,7 @@ namespace LearningProject
             }
             return result;
         }
-//поиск индекса данного значения
+        //поиск индекса данного значения
         public int IndexOf(Func<int, bool> condition)
         {
             for (var i = 0; i < array.Length; i += 1)
@@ -278,7 +278,7 @@ namespace LearningProject
             return IndexOf(x => x == value);
         }
         */
-//реверс массива
+        //реверс массива
         public void Reverse()
         {
             int[] newArray = new int[array.Length];
@@ -288,7 +288,7 @@ namespace LearningProject
             }
             array = newArray;
         }
-//трансфрормация массива
+        //трансфрормация массива
         public IntList Transform(Func<int, int> transform)
         {
             var result = new IntList();
@@ -298,6 +298,24 @@ namespace LearningProject
                 result.Add(newValue);
             }
             return result;
+        }
+        //пузырьковая сортирка
+        public void BubbleSort()
+        {
+            var temp = 0;
+            for (int i = 0; i < Count - 1; i += 1)
+            {
+                for (int j = 0; j < Count - i - 1; j += 1)
+                {
+                    if (array[j] > array[j + 1])
+                    {
+                        temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
+
+                }
+            }
         }
     }
 }
