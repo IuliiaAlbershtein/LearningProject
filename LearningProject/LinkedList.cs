@@ -6,32 +6,6 @@ using System.Threading.Tasks;
 
 namespace LearningProject
 {
-//создание нового класса Node
-class Node
-    {
-        //в нем существуют значения
-        private int value;
-        //конструкция getter/setter для возвращения/становления значения
-        public int Value
-        {
-            get { return value; }
-            //при вызове сеттера можно расширить условия
-            set { this.value = value; }
-        }
-        //ссылка на следующее значение
-        private Node next;
-        public Node Next
-        {
-            get { return next; }
-            set { next = value; }
-        }
-        //расширение или упрощение доступной функционалиты под свои требования
-        public override string ToString()
-        {
-            //неуверена в понимании синтаксиа???????????
-            return $"{value}";
-        }
-    }
     class LinkedList
     {
         //значение стоящее в начале цепочки
@@ -157,6 +131,38 @@ class Node
             {
                 current.Next = newNode;
                 newNode.Next = null;
+            }
+        }
+
+        public void Sort()
+        {
+
+        }
+
+        //создание нового класса Node
+        class Node
+        {
+            //в нем существуют значения
+            private int value;
+            //конструкция getter/setter для возвращения/становления значения
+            public int Value
+            {
+                get { return value; }
+                //при вызове сеттера можно расширить условия
+                set { this.value = value; }
+            }
+            //ссылка на следующее значение
+            private Node next;
+            public Node Next
+            {
+                get { return next; }
+                set { next = value; }
+            }
+            //расширение или упрощение доступной функционалиты под свои требования
+            public override string ToString()
+            {
+                //неуверена в понимании синтаксиа???????????
+                return $"{value}";
             }
         }
     }
