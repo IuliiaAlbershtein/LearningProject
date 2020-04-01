@@ -8,6 +8,12 @@ namespace LearningProject
 {
     class Program
     {
+        /*
+         * IntList/Vector
+         * LinkedList
+         * BST Tree
+         * Hash Table
+        */
         static void Main(string[] args)
         {
             // Task1();
@@ -42,8 +48,8 @@ namespace LearningProject
             // Task30();
             // Task31();
             // Task39();
-            // Task40();
-            Task41();
+            Task40();
+            // Task41();
 
             Console.ReadLine();
         }
@@ -75,10 +81,10 @@ namespace LearningProject
             list.Add(4);
             list.Add(55);
             list.Add(6);
+            list.Add(68);
+            list.Add(3);
             list.Add(6);
-            list.Add(6);
-            list.Add(6);
-            list.Add(6);
+            list.Add(8);
             // list.Remove(6);
             // list.Contains(6);
             // list.Max();
@@ -88,13 +94,13 @@ namespace LearningProject
             // list.Reverse();
             // list.Insert(4, 35);
             // list.RemoveAll();
-            //            list.Sort();
-
+            // list.Sort();
+            list.BubbleSort();
             //var index1 = list.IndexOf(value => value > 3);
             //var indexEven = list.IndexOf(x => x % 2 == 0);
 
             //var even = list.Filter(x => x % 2 == 0);
-            
+            /*
             bool condition(int x)
             {
                 return x % 2 == 0;
@@ -105,13 +111,13 @@ namespace LearningProject
             for (var i = 0; i < doubled.Count; i += 1)
              {
              Console.WriteLine(doubled.GetValue(i));
-             }
+             }*/
 
-            //for (var i = 0; i < list.GetCount(); i += 1)
-            //{
-            //  Console.WriteLine(list.GetValue(i));
-            //}
-            // Console.Write(list.GetCount());
+            for (var i = 0; i < list.Count; i += 1)
+            {
+              Console.WriteLine(list.GetValue(i));
+            }
+            //Console.Write(list.Count);
 
             //Console.WriteLine(list.Contains(6));
             //Console.WriteLine(list.Max());
