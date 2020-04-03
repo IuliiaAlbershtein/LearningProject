@@ -119,10 +119,11 @@ namespace LearningProject
 
         }
         //добавить новое последнее значение
-        public void AddLast()
+        public void AddLast(int value)
         {
             var current = head;
             var newNode = new Node();
+            newNode.Value = value;
             while (current != null)
             {
                 current = current.Next;
