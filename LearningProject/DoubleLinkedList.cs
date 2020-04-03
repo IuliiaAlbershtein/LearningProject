@@ -26,20 +26,39 @@ namespace LearningProject
 
         public DoubleLinkedList()
         {
+            head = null;
+            tail = null;
             count = 0;
         }
 
         public void AddFirst(int value)
         {
+            var newNode = new Node();
+            newNode.Value = value;
+            if (head == null)
+            {
+                head = newNode;
+                tail = newNode;
+            }
+            else
+            {
+                newNode.Next = head;
+                head.Previous = newNode;
+                head = newNode;
+            }
             count += 1;
         }
 
         public void RemoveFirst()
         {
+            head = head.Next;
+            count -= 1;
         }
 
         public void RemoveLast()
         {
+            tail = tail.Previous;
+            count -= 1;
         }
 
         public void ForEach(Action<int> action)
@@ -54,19 +73,62 @@ namespace LearningProject
 
         public int GetValue(int index)
         {
-            return 0;
+            var countNodes = 0;
+            var current = head;
+            while (countNodes != index)
+            {
+                current = current.Next;
+                countNodes += 1;
+            }
+            return current.Value;
         }
 
         public void InsertAt(int index, int value)
         {
+            var countNodes = 0;
+            var current = head;
+            var newNode = new Node();
+            newNode.Value = value;
+            while (countNodes <= index)
+            {
+                if (countNodes + 1 == index)
+                {
+                    newNode.Next = current.Next;
+                    newNode.Previous = current;
+                    current.Next = newNode;
+                }
+                if (countNodes == index + 1)
+                {
+                    current.Previous = newNode;
+                }
+                current = current.Next;
+                countNodes += 1;
+            }
+            count += 1;
         }
 
         public void RemoveAt(int index)
         {
+
+            count -= 1;
         }
 
-        public void AddLast()
+        public void AddLast(int value)
         {
+            var newNode = new Node();
+            newNode.Value = value;
+            if (head == null)
+            {
+                head = newNode;
+                tail = newNode;
+            }
+            else
+            {
+                tail.Next = newNode;
+                newNode.Previous = tail;
+                tail = newNode;
+            }
+            count += 1;
         }
 
         public void Sort()
