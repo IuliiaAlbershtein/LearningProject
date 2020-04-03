@@ -48,12 +48,28 @@ namespace LearningProject
             // Task30();
             // Task31();
             // Task39();
-            Task40();
+            // Task40();
             // Task41();
-
+            Task42();
             Console.ReadLine();
         }
+        static void Task42()
+        {
+            var dLL = new DoubleLinkedList();
+            dLL.AddFirst(8);
+            dLL.AddLast(26);
+            dLL.AddLast(5);
+            dLL.AddLast(77);
+            dLL.AddLast(56);
+            dLL.AddLast(33);
+            dLL.AddLast(2);
+            dLL.InsertAt(3, 555);
 
+            for (var i = 0; i < dLL.Count; i += 1)
+            {
+                Console.WriteLine(dLL.GetValue(i));
+            }
+        }
         static void Task41()
         {
             // LinkedList
