@@ -6,10 +6,6 @@ using System.Threading.Tasks;
 
 namespace LearningProject
 {
-    // * -> 0      <-->     1        <--> 2       <- .
-    // * -> 0
-    //   prev: null     prev: 0      prev: 1
-    //   next: 1        next: 2      next: null
     class DoubleLinkedList
     {
         private Node head;
@@ -109,8 +105,34 @@ namespace LearningProject
 
         public void RemoveAt(int index)
         {
+            var countNodes = 0;
+            var current = head;
+            if (index == 0)
+            {
+                RemoveFirst();
+            }
+            else if (index == count - 1)
+            {
+                RemoveLast();
+            }
+            else
+            {
+                while (current != null)
+                {
+                    if (countNodes + 1 == index)
+                    {
+                        var temp = current.Next;
+                        current.Next = temp.Next;
 
-            count -= 1;
+                        current = current.Next;
+                        temp = current.Previous;
+                        current.Previous = temp.Previous;
+                    }
+                    current = current.Next;
+                    countNodes += 1;
+                }
+                count -= 1;
+            }
         }
 
         public void AddLast(int value)
