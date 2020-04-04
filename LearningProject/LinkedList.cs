@@ -63,13 +63,13 @@ namespace LearningProject
             var current = head;
             while (current != null)
             {
-                current = current.Next;
-                i += 1;
                 if (i == index)
                 {
                     //вернуть значение в данном узле
                     return current.Value;
                 }
+                current = current.Next;
+                i += 1;
             }
             return -1;
         }
@@ -134,10 +134,51 @@ namespace LearningProject
                 newNode.Next = null;
             }
         }
+        public void Swap(int index)
+        {
+            var k = 0;
+            var current = head;
+            if (index == 0)
+            {
+                head = current.Next;
+                current.Next = head.Next;
+                head.Next = current;
+            }
+            while (k < index)
+            {
+                k += 1;
+                current = current.Next;
+                if (k == index)
+                {
+                    var temp = current.Next;
+                    current.Next = current.Next.Next;
+                    current = current.Next;
+                    current.Next = temp;
+                }
+            }
+        }
 
         public void Sort()
-        {
+        {/*
+            var current = head;
+            while (current != null)
+            {
+                if ()
+            }
+            var temp = 0;
+            for (int i = 0; i < Count - 1; i += 1)
+            {
+                for (int j = 0; j < Count - i - 1; j += 1)
+                {
+                    if (array[j] > array[j + 1])
+                    {
+                        temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
 
+                }
+            }*/
         }
 
         //создание нового класса Node
