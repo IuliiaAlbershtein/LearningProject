@@ -144,18 +144,29 @@ namespace LearningProject
                 current.Next = head.Next;
                 head.Next = current;
             }
-            while (k < index)
+            if (index != 0)
             {
-                k += 1;
-                current = current.Next;
-                if (k == index)
+                while (k <= index)
                 {
-                    var temp = current.Next;
-                    current.Next = current.Next.Next;
+                    if (index == Count - 1)
+                    {
+                        break;
+                    }
+                    if (k == index - 1)
+                    {
+                        var temp = current.Next;
+                        current.Next = temp.Next;
+                        current = current.Next;
+                        temp.Next = current.Next;
+                        current.Next = temp;
+                    }
+
+                    k += 1;
                     current = current.Next;
-                    current.Next = temp;
+
                 }
             }
+
         }
 
         public void Sort()
