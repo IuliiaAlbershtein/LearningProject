@@ -170,26 +170,27 @@ namespace LearningProject
         }
 
         public void Sort()
-        {/*
+        {
             var current = head;
-            while (current != null)
+            var index = 0;
+            var count = this.Count;
+            while (current != null && count >= 0)
             {
-                if ()
-            }
-            var temp = 0;
-            for (int i = 0; i < Count - 1; i += 1)
-            {
-                for (int j = 0; j < Count - i - 1; j += 1)
+                while (count - 2 >= 0 && index < count - 2)
                 {
-                    if (array[j] > array[j + 1])
+                    if (current.Value > current.Next.Value)
                     {
-                        temp = array[j];
-                        array[j] = array[j + 1];
-                        array[j + 1] = temp;
-                    }
 
+                        current = current.Next;
+                        Swap(index);
+                    }
+                    current = current.Next;
+                    index += 1;
                 }
-            }*/
+                current = head;
+                index = 0;
+                count -= 1;
+            }
         }
 
         //создание нового класса Node
