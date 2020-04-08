@@ -49,9 +49,29 @@ namespace LearningProject
             // Task31();
             // Task39();
             // Task40();
-            // Task41();
-            Task42();
+            Task41();
+            //Task42();
+            //Task43();
             Console.ReadLine();
+        }
+        static void Task43()
+        {
+            var bst = new BstTree();
+            bst.Add(5);
+            bst.Add(2);
+            bst.Add(1);
+            bst.Add(10);
+            bst.Add(6);
+            bst.Add(8);
+            bst.Add(7);
+
+            if (bst.Contains(7))
+            {
+                Console.WriteLine("Contains!");
+            }
+            bst.ForEach(x => Console.Write($"{x} "));
+            bst.Remove(5);
+
         }
         static void Task42()
         {
@@ -59,12 +79,12 @@ namespace LearningProject
             dLL.AddFirst(8);
             dLL.AddLast(26);
             dLL.AddLast(5);
-            dLL.AddLast(77);
-            dLL.AddLast(56);
-            dLL.AddLast(33);
-            dLL.AddLast(2);
-            dLL.InsertAt(3, 555);
-
+            //dLL.AddLast(77);
+            //dLL.AddLast(56);
+            //dLL.AddLast(33);
+            // dLL.AddLast(2);
+            // dLL.InsertAt(3, 555);
+            dLL.RemoveAt(2);
             for (var i = 0; i < dLL.Count; i += 1)
             {
                 Console.WriteLine(dLL.GetValue(i));
@@ -74,14 +94,20 @@ namespace LearningProject
         {
             // LinkedList
             var linkedList = new LinkedList();
-            linkedList.AddFirst(10);
+            //linkedList.AddFirst(10);
             linkedList.AddFirst(11);
             linkedList.AddFirst(4);
             linkedList.AddFirst(7);
-            var value = linkedList.GetValue(1);
-            var count = linkedList.Count;
+            linkedList.AddFirst(5);
+            linkedList.AddFirst(6);
+            linkedList.AddFirst(8);
+            linkedList.AddFirst(1);
+            linkedList.Sort();
+            //linkedList.Swap(6);
+            //var value = linkedList.GetValue(1);
+            // var count = linkedList.Count;
 
-            linkedList.ForEach(x => Console.WriteLine(x));
+            //linkedList.ForEach(x => Console.WriteLine(x));
 
             for (var i = 0; i < linkedList.Count; i += 1)
             {
