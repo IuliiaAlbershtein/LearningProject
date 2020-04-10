@@ -93,12 +93,12 @@ namespace LearningProject
                     newNode.Previous = current;
                     current.Next = newNode;
                 }
-                if (countNodes == index + 1)
+                current = current.Next;
+                countNodes += 1;
+                if (countNodes == index + 1 && current != null)
                 {
                     current.Previous = newNode;
                 }
-                current = current.Next;
-                countNodes += 1;
             }
             count += 1;
         }
@@ -128,6 +128,10 @@ namespace LearningProject
                         temp = current.Previous;
                         current.Previous = temp.Previous;
                     }
+                    /*if ()
+                    {
+
+                    }*/
                     current = current.Next;
                     countNodes += 1;
                 }
@@ -152,10 +156,67 @@ namespace LearningProject
             }
             count += 1;
         }
+        public void Swap(int index)
+        {
+            var k = 0;
+            var current = head;
+            if (index == 0)
+            {
+                head = current.Next;
+                current.Next = head.Next;
+                current.Previous = head;
+                head.Next = current;
+                head.Previous = null;
+                current.Next.Previous = current;
+            }
+            if (index != 0)
+            {
+                while (k <= index)
+                {
+                    if (index == Count - 1)
+                    {
+                        break;
+                    }
 
+                    if (k == index)
+                    {
+                        var temp = current.Value;
+                        RemoveAt(k);
+                        if (k == count)
+                        {
+                            AddLast(temp);
+                        }
+                        else
+                        {
+                            InsertAt(k + 1, temp);
+                        }
+                    }
+                    k += 1;
+                    current = current.Next;
+                }
+            }
+        }
         public void Sort()
         {
-
+            var current = head;
+            var index = 0;
+            var count = this.Count;
+            while (current != null && count >= 0)
+            {
+                while (count - 2 >= 0 && index < count - 1)
+                {
+                    if (current.Value > current.Next.Value)
+                    {
+                        current = current.Next;
+                        Swap(index);
+                    }
+                    current = current.Next;
+                    index += 1;
+                }
+                current = head;
+                index = 0;
+                count -= 1;
+            }
         }
 
         class Node
