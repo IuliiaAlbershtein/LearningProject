@@ -85,6 +85,21 @@ namespace LearningProject
             var current = head;
             var newNode = new Node();
             newNode.Value = value;
+            if (index == 0)
+            {
+                newNode.Value = value;
+                if (head == null)
+                {
+                    head = newNode;
+                    tail = newNode;
+                }
+                else
+                {
+                    newNode.Next = head;
+                    head.Previous = newNode;
+                    head = newNode;
+                }
+            }
             while (countNodes <= index)
             {
                 if (countNodes + 1 == index)
@@ -98,6 +113,21 @@ namespace LearningProject
                 if (countNodes == index + 1 && current != null)
                 {
                     current.Previous = newNode;
+                }
+            }
+            if (index == count)
+            {
+                newNode.Value = value;
+                if (head == null)
+                {
+                    head = newNode;
+                    tail = newNode;
+                }
+                else
+                {
+                    tail.Next = newNode;
+                    newNode.Previous = tail;
+                    tail = newNode;
                 }
             }
             count += 1;
