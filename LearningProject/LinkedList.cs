@@ -176,7 +176,7 @@ namespace LearningProject
             var count = this.Count;
             while (current != null && count >= 0)
             {
-                while (count - 2 >= 0 && index < count - 2)
+                while (count - 2 >= 0 && index < count - 1)
                 {
                     if (current.Value > current.Next.Value)
                     {
