@@ -28,29 +28,6 @@ namespace LearningProject
             action(node.Value);
             ForEach(node.Right, action);
         }
-        private void ForEachI(Node node, Action<int> action)
-        {/*
-            Stack newStack = new Stack();
-            newStack = null;
-            var current = head;
-            if (head == null)
-            {
-                return;
-            }
-            while (current != null)
-            {
-                newStack.Push(current);
-                current = current.Left;
-            }
-            if (current == null)
-            {
-                current = newStack.Pop();
-
-                Consol
-                
-            }*/
-            
-        }
         public bool Contains(int value)
         {
             return Contains(head, value);
@@ -179,7 +156,96 @@ namespace LearningProject
         }
         private void RemoveR(Node node, int value)
         {
+            if (node == head && head == null)
+            {
+                return;
+            }
 
+            // remove head
+            if (head.Value == value)
+            {
+                // if right subtree is empty
+                if (head.Right == null)
+                {
+                    head = head.Left;
+                    return;
+                }
+
+                // right is not empty
+                var leftSubtree = head.Left;
+
+                head = head.Right;
+
+                var current = head;
+                while (true)
+                {
+                    if (current.Left == null)
+                    {
+                        current.Left = leftSubtree;
+                        return;
+                    }
+                    current = current.Left;
+                }
+            }
+
+            // remove some other node
+            //var node = head;
+            else if (value < node.Value)
+            {
+                if (node.Left.Value == value && node.Left.Left == null && node.Left.Right == null)
+                {
+                    node.Left = null;
+                    return;
+                }
+                else if (node.Left.Value == value && node.Left.Right == null)
+                {
+                    node.Left = node.Left.Left;
+                    return;
+                }
+                else if (node.Left.Value == value && node.Left.Right != null)
+                {
+                    var leftSubTree = node.Left.Left;
+                    node = node.Left.Right;
+                    while (true)
+                    {
+                        if (node.Left == null)
+                        {
+                            node.Left = leftSubTree;
+                            return;
+                        }
+                        node = node.Left;
+                    }
+                }
+                RemoveR(node.Left, value);
+            }
+            else if (value > node.Value)
+            {
+                if (node.Right.Value == value && node.Right.Left == null && node.Right.Right == null)
+                {
+                    node.Right = null;
+                    return;
+                }
+                else if (node.Right.Value == value && node.Right.Right == null)
+                {
+                    node.Right = node.Right.Left;
+                    return;
+                }
+                else if (node.Right.Value == value && node.Right.Right != null)
+                {
+                    var leftSubTree = node.Right.Left;
+                    node = node.Right.Right;
+                    while (true)
+                    {
+                        if (node.Left == null)
+                        {
+                            node.Left = leftSubTree;
+                            return;
+                        }
+                        node = node.Left;
+                    }
+                }
+                RemoveR(node.Right, value);
+            }
         }
 
         public void Remove(int value)
@@ -217,64 +283,64 @@ namespace LearningProject
             }
 
             // remove some other node
-            var otherNode = head;
+            var node = head;
             while (true)
             {
-                if (value < otherNode.Value)
+                if (value < node.Value)
                 {
-                    if (otherNode.Left.Value == value && otherNode.Left.Left == null && otherNode.Left.Right == null)
+                    if (node.Left.Value == value && node.Left.Left == null && node.Left.Right == null)
                     {
-                        otherNode.Left = null;
+                        node.Left = null;
                         return;
                     }
-                    else if (otherNode.Left.Value == value && otherNode.Left.Right == null)
+                    else if (node.Left.Value == value && node.Left.Right == null)
                     {
-                        otherNode.Left = otherNode.Left.Left;
+                        node.Left = node.Left.Left;
                         return;
                     }
-                    else if (otherNode.Left.Value == value && otherNode.Left.Right != null)
+                    else if (node.Left.Value == value && node.Left.Right != null)
                     {
-                        var leftSubTree = otherNode.Left.Left;
-                        otherNode = otherNode.Left.Right;
+                        var leftSubTree = node.Left.Left;
+                        node = node.Left.Right;
                         while (true)
                         {
-                            if (otherNode.Left == null)
+                            if (node.Left == null)
                             {
-                                otherNode.Left = leftSubTree;
+                                node.Left = leftSubTree;
                                 return;
                             }
-                            otherNode = otherNode.Left;
+                            node = node.Left;
                         }
                     }
-                    otherNode = otherNode.Left;
+                    node = node.Left;
                 }
-                if (value > otherNode.Value)
+                if (value > node.Value)
                 {
-                    if (otherNode.Right.Value == value && otherNode.Right.Left == null && otherNode.Right.Right == null)
+                    if (node.Right.Value == value && node.Right.Left == null && node.Right.Right == null)
                     {
-                        otherNode.Right = null;
+                        node.Right = null;
                         return;
                     }
-                    else if (otherNode.Right.Value == value && otherNode.Right.Right == null)
+                    else if (node.Right.Value == value && node.Right.Right == null)
                     {
-                        otherNode.Right = otherNode.Right.Left;
+                        node.Right = node.Right.Left;
                         return;
                     }
-                    else if (otherNode.Right.Value == value && otherNode.Right.Right != null)
+                    else if (node.Right.Value == value && node.Right.Right != null)
                     {
-                        var leftSubTree = otherNode.Right.Left;
-                        otherNode = otherNode.Right.Right;
+                        var leftSubTree = node.Right.Left;
+                        node = node.Right.Right;
                         while (true)
                         {
-                            if (otherNode.Left == null)
+                            if (node.Left == null)
                             {
-                                otherNode.Left = leftSubTree;
+                                node.Left = leftSubTree;
                                 return;
                             }
-                            otherNode = otherNode.Left;
+                            node = node.Left;
                         }
                     }
-                    otherNode = otherNode.Right;
+                    node = node.Right;
                 }
             }
         }
