@@ -117,7 +117,6 @@ namespace LearningProject
                     node.Left = new Node(newValue);
                     return;
                 }
-                // node = node.Left;
                 AddR(node.Left, newValue);
             }
             else if (newValue > node.Value)
@@ -127,7 +126,6 @@ namespace LearningProject
                     node.Right = new Node(newValue);
                     return;
                 }
-                // node = node.Right;
                 AddR(node.Right, newValue);
             }
             else
@@ -175,6 +173,14 @@ namespace LearningProject
                 }
             }
         }
+        public void RemoveR(int value)
+        {
+            RemoveR(head, value);
+        }
+        private void RemoveR(Node node, int value)
+        {
+
+        }
 
         public void Remove(int value)
         {
@@ -206,12 +212,71 @@ namespace LearningProject
                         current.Left = leftSubtree;
                         return;
                     }
-
                     current = current.Left;
                 }
             }
 
             // remove some other node
+            var otherNode = head;
+            while (true)
+            {
+                if (value < otherNode.Value)
+                {
+                    if (otherNode.Left.Value == value && otherNode.Left.Left == null && otherNode.Left.Right == null)
+                    {
+                        otherNode.Left = null;
+                        return;
+                    }
+                    else if (otherNode.Left.Value == value && otherNode.Left.Right == null)
+                    {
+                        otherNode.Left = otherNode.Left.Left;
+                        return;
+                    }
+                    else if (otherNode.Left.Value == value && otherNode.Left.Right != null)
+                    {
+                        var leftSubTree = otherNode.Left.Left;
+                        otherNode = otherNode.Left.Right;
+                        while (true)
+                        {
+                            if (otherNode.Left == null)
+                            {
+                                otherNode.Left = leftSubTree;
+                                return;
+                            }
+                            otherNode = otherNode.Left;
+                        }
+                    }
+                    otherNode = otherNode.Left;
+                }
+                if (value > otherNode.Value)
+                {
+                    if (otherNode.Right.Value == value && otherNode.Right.Left == null && otherNode.Right.Right == null)
+                    {
+                        otherNode.Right = null;
+                        return;
+                    }
+                    else if (otherNode.Right.Value == value && otherNode.Right.Right == null)
+                    {
+                        otherNode.Right = otherNode.Right.Left;
+                        return;
+                    }
+                    else if (otherNode.Right.Value == value && otherNode.Right.Right != null)
+                    {
+                        var leftSubTree = otherNode.Right.Left;
+                        otherNode = otherNode.Right.Right;
+                        while (true)
+                        {
+                            if (otherNode.Left == null)
+                            {
+                                otherNode.Left = leftSubTree;
+                                return;
+                            }
+                            otherNode = otherNode.Left;
+                        }
+                    }
+                    otherNode = otherNode.Right;
+                }
+            }
         }
 
 
