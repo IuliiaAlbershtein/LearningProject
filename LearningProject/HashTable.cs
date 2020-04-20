@@ -44,9 +44,31 @@ namespace LearningProject
         {
             return value * 33;
         }
+        public void ResizeIfNeeded()
+        {
+            if (3 * capacity - count < capacity)
+            {
+                var index = 0;
+                var newCapacity = capacity * 2;
+                Node[] newItems = new Node[newCapacity];
+                
+                while (index <= capacity)
+                {
+                    if (items[index] != null)
+                    {
+                        var newIndex = GetIndex(items[index].Value);
+                        newItems[newIndex] = items[index];
+                    }
+                    index += 1;
+                }
+                items = newItems;
+            }
 
+        }
         public void Insert(int value)
         {
+            //resize if needed
+
         }
 
         public void Delete(int value)
