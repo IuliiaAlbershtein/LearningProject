@@ -68,20 +68,103 @@ namespace LearningProject
         public void Insert(int value)
         {
             //resize if needed
-
+            ResizeIfNeeded();
+            var index = GetIndex(value);
+            if (items[index] == null)
+            {
+                items[index] = new Node(value);
+                return;
+            }
+            if (items[index] != null)
+            {
+                var node = items[index];
+                while (node.Next != null)
+                {
+                    node = node.Next;
+                }
+                node.Next = new Node(value);
+            }
+            count += 1;
         }
 
         public void Delete(int value)
         {
+            var index = GetIndex(value);
+            var node = items[index];
+            if (node == null)
+            {
+                return;
+            }
+            if (node.Value == value)
+            {
+                items[index] = null;
+                return;
+            }
+            if (node != null && node.Value != value)
+            {
+                while (node.Next.Value != value)
+                {
+                    node = node.Next;
+                    if (node.Next == null)
+                    {
+                        return;
+                    }
+                }
+                node.Next = node.Next.Next;
+            }
+            count -= 1;
         }
 
         public bool Contains(int value)
         {
+            var index = GetIndex(value);
+            var node = items[index];
+            if (node == null)
+            {
+                return false;
+            }
+            if (node.Value == value)
+            {
+                return true;
+            }
+            if (node != null && node.Value != value)
+            {
+                while (node != null)
+                {
+                    if (node.Value != value && node.Next == null)
+                    {
+                        return false;
+                    }
+                    node = node.Next;
+                    if (node.Value == value)
+                    {
+                        return true;
+                    }
+                }
+                return true;
+            }
             return false;
         }
 
         public void ForEach(Action<int> action)
         {
+            var index = 0;
+            var node = items[index];
+            while (index <= capacity - 1)
+            {
+                while (node != null)
+                {
+                    action(node.Value);
+                    node = node.Next;
+                }
+                index += 1;
+                if (index == capacity)
+                {
+                    break;
+                }
+                node = items[index];
+            }
+
         }
 
         class Node
