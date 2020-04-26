@@ -45,34 +45,49 @@ namespace LearningProject
             return value * 33;
         }
         public void ResizeIfNeeded()
-        {
+        {/*
             if (3 * capacity - count < capacity)
             {
                 var index = 0;
-                var newCapacity = capacity * 2;
-                Node[] newItems = new Node[newCapacity];
+                var oldCapacity = capacity;
+                capacity = capacity * 2;
+                Node[] newItems = new Node[capacity];
                 
-                while (index <= capacity)
+                while (index <= oldCapacity)
                 {
                     if (items[index] != null)
-                    {
+                    {                        
+                        var node = items[index];
+                        ForEach(x => GetIndex(node.Value));
+                        ForEach(node.Value, action);
+                        action(node.Value);
+                        while (true)
+                        {
+                            if (node.Next == null)
+                            {
+                                var newNodeIndex = GetIndex(node.Value);
+                                newItems[newNodeIndex] = items[index];
+                            }
+                            node = node.Next;
+                        }
                         var newIndex = GetIndex(items[index].Value);
                         newItems[newIndex] = items[index];
                     }
                     index += 1;
                 }
                 items = newItems;
-            }
+            }*/
 
         }
         public void Insert(int value)
         {
             //resize if needed
-            ResizeIfNeeded();
+            //ResizeIfNeeded();
             var index = GetIndex(value);
             if (items[index] == null)
             {
                 items[index] = new Node(value);
+                count += 1;
                 return;
             }
             if (items[index] != null)
@@ -85,6 +100,7 @@ namespace LearningProject
                 node.Next = new Node(value);
             }
             count += 1;
+            ResizeIfNeeded();
         }
 
         public void Delete(int value)
