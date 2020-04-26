@@ -97,7 +97,7 @@ namespace LearningProject
             }
             if (node.Value == value)
             {
-                items[index] = null;
+                items[index] = node.Next;
                 return;
             }
             if (node != null && node.Value != value)
