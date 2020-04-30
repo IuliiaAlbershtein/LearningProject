@@ -50,29 +50,111 @@ namespace LearningProject
             // Task39();
             // Task40();
             // Task41();
-             Task42();
-            //Task43();
+            // Task42();
+            // Task43();
+            Task44();
             Console.ReadLine();
+        }
+        static void Task44()
+        {
+            var htbl = new HashTable(5);
+            htbl.Insert(5);
+            htbl.Insert(7);
+            htbl.Insert(15);
+            htbl.Insert(4);
+            htbl.Insert(25);
+            htbl.Insert(13);
+            htbl.Insert(8);
+            htbl.Insert(11);
+            htbl.Insert(9);
+            htbl.Insert(12);
+            htbl.Insert(19);
+            htbl.Insert(29);
+            htbl.Delete(4);
+
+            // в  и  й
+            // 3 10 11 = 3 + 10 + 11 = 24
+
+            // size: 10
+            //  0  1  2  3  4  5  6  7  8  9
+            // 10 61 22 83 14  5 55 77 75  4     
+
+            // size: 20 (hash2)
+            //  0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19
+            //    61  2 83     5              10              14  55  75  77  74     
+
+            // size: 20 (hash2)
+            //  0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19
+            //       14 61    55  6 75    83  10  77               5                    
+            //       74
+            //       22
+
+            /*if (htbl.Contains(8))
+            {
+                Console.WriteLine("Contains!");
+            }
+            else
+            {
+                Console.WriteLine("Does not contain!");
+            }*/
+            htbl.ForEach(x => Console.Write($"{x} "));
+
+
         }
         static void Task43()
         {
             var bst = new BstTree();
-            bst.Add(5);
-            bst.Add(2);
-            bst.Add(1);
-            bst.Add(10);
-            bst.Add(6);
-            bst.Add(8);
-            bst.Add(7);
+            bst.AddR(5);
+            bst.AddR(2);
+            bst.AddR(1);
+            bst.AddR(10);
+            bst.AddR(6);
+            bst.AddR(8);
+            bst.AddR(7);
+            bst.AddR(55);
 
-            if (bst.Contains(7))
+            //  0  1  2  3  4  5  6  7  8  9
+            //     1  2        5  6  7  8     10         55  
+            //
+
+            //bst.Remove(5);
+            bst.RemoveR(7);
+            /* if (bst.Contains(7))
             {
                 Console.WriteLine("Contains!");
             }
+            if (bst.ContainsI(9))
+            {
+                Console.WriteLine("Contains!");
+            }
+            else
+            {
+                Console.WriteLine("Does not contain!");
+            }*/
             bst.ForEach(x => Console.Write($"{x} "));
-            bst.Remove(5);
 
         }
+
+        static int hash1(int value, int size)
+        {
+            return value;
+        }
+
+        static int hash2(int value, int size)
+        {
+            return value % size;
+        }
+
+        static int hash3(int value, int size)
+        {
+            return (value * 3) % size;
+        }
+
+        static int hash4(int value, int size)
+        {
+            return value.GetHashCode() % size;
+        }
+
         static void Task42()
         {
             var dLL = new DoubleLinkedList();
@@ -83,10 +165,10 @@ namespace LearningProject
             dLL.AddLast(56);
             dLL.AddLast(33);
             dLL.AddLast(2);
-            dLL.InsertAt(3, 555);
+            dLL.InsertAt(0, 555);
             //dLL.RemoveAt(5);
             //dLL.Swap(5);
-            dLL.Sort();
+            //dLL.Sort();
             for (var i = 0; i < dLL.Count; i += 1)
             {
                 Console.WriteLine(dLL.GetValue(i));
