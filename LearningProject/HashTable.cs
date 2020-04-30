@@ -45,39 +45,40 @@ namespace LearningProject
             return value * 33;
         }
         public void ResizeIfNeeded()
-        {/*
+        {
             if (3 * capacity - count < capacity)
             {
+                var newCapacity = capacity * 2;
+                Node[] newItems = new Node[newCapacity];
+             
                 var index = 0;
-                var oldCapacity = capacity;
-                capacity = capacity * 2;
-                Node[] newItems = new Node[capacity];
-                
-                while (index <= oldCapacity)
+
+                while (index < capacity)
                 {
-                    if (items[index] != null)
-                    {                        
-                        var node = items[index];
-                        ForEach(x => GetIndex(node.Value));
-                        ForEach(node.Value, action);
-                        action(node.Value);
-                        while (true)
+                    var node = items[index];
+                    while (node != null)
+                    {
+                        var newIndex = Hash(node.Value) % newCapacity;
+                        if (newItems[newIndex] != null)
                         {
-                            if (node.Next == null)
+                            var existingNode = newItems[newIndex];
+                            while (existingNode.Next != null)
                             {
-                                var newNodeIndex = GetIndex(node.Value);
-                                newItems[newNodeIndex] = items[index];
+                                existingNode = existingNode.Next;
                             }
-                            node = node.Next;
+                            existingNode.Next = new Node(node.Value);
                         }
-                        var newIndex = GetIndex(items[index].Value);
-                        newItems[newIndex] = items[index];
+                        else
+                        {
+                            newItems[newIndex] = new Node(node.Value);
+                        }
+                        node = node.Next;
                     }
                     index += 1;
                 }
-                items = newItems;
-            }*/
-
+            capacity = newCapacity;
+            items = newItems;
+            }
         }
         public void Insert(int value)
         {
